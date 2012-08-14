@@ -31,3 +31,7 @@ path.missedArea {
     stroke: #000;
     shape-rendering: crispEdges;
 }
+
+line {
+    shape-rendering: crispEdges;
+}

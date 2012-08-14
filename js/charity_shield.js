@@ -61,13 +61,12 @@ function drawVis () {
         return d.Year + " : " + d.Winner + ", " + d.LeaguePosition;
       });
 
-    svg.append("path")
-      .attr("class", "line")
-      .attr("fill", "none")
-      .attr("stroke", "steelblue")
-      .attr("stroke-width", 2)
-      .attr("d", d3.svg.line()
-            .x(function(d) { return xScale(+d.Year); })
-            .y(function(d) { return yScale(+d.LeaguePosition); }));
+    var g = svg.append("svg:g");
+
+    var line = d3.svg.line()
+      .x(function(d,i) { return xScale(+d.Year); })
+      .y(function(d) { return yScale(+d.LeaguePosition); })
+
+    g.append("svg:path").attr("d", line(data));
   });
 };
