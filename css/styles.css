@@ -8,25 +8,10 @@
     shape-rendering: crispEdges;
 }
 
-line {
-    shape-rendering: crispEdges;
-}
-
-.path {
-    fill: none;
-}
-path.winners {
-    fill: steelblue;
-}
-
 path {
     stroke: steelblue;
-    stroke-width: 2;
+    stroke-width: 1;
     fill: none;
-}
-
-line {
-    stroke: black;
 }
 
 text {
