@@ -11,6 +11,10 @@ function drawVis () {
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
   d3.csv ("charity_shield.csv", function (data) {
+    data = data.filter (function (d) {
+      return d.LeaguePosition != -1;
+    });
+
     var xScale = d3.time.scale()
       .range([0, width - margin.left - margin.right])
       .domain(d3.extent(data, function(d) { return d.Year; }));
