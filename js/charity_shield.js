@@ -16,7 +16,7 @@ function drawVis () {
       .range([height - margin.top - margin.bottom, 0])
       .domain([d3.max(data, function(d) { return +d.LeaguePosition; }), 1]);
 
-    var vis = d3.select("body").append("svg")
+    var vis = d3.select("#vis").append("svg")
       .attr("width", width)
       .attr("height", height)
       .attr("class", "winners")
@@ -46,11 +46,13 @@ function drawVis () {
         d3.select(this)
           .attr("r", 6)
           .attr("opacity", "1");
+        drawLegend (d);
       })
       .on("mouseout", function(d){
         d3.select(this)
           .attr("r", 4)
           .attr("opacity", 0.6);
+        clearLegend ();
       });
 
     circles.append ("title")
@@ -79,4 +81,12 @@ function drawVis () {
       .attr("class", "y axis")
       .call(yAxis);
   });
+}
+
+function drawLegend () {
+
+}
+
+function clearLegend () {
+
 }
