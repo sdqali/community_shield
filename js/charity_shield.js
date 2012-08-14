@@ -40,7 +40,7 @@ function drawVis () {
         return yScale (+d.LeaguePosition);
       })
       .attr ("r", 4)
-      .attr ("fill", "teal")
+      .attr ("class", "team")
       .attr("opacity", 0.6)
       .on("mouseover", function(d){
         d3.select(this)

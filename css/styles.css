@@ -4,12 +4,12 @@
 
 .axis path, .axis line {
     fill: none;
-    stroke: #000;
+    stroke: black;
     shape-rendering: crispEdges;
 }
 
 path {
-    stroke: steelblue;
+    stroke: black;
     stroke-width: 1;
     fill: none;
 }
@@ -17,4 +17,12 @@ path {
 text {
     font-family: Arial;
     font-size: 9pt;
+}
+
+.winners {
+    background-color: steelblue;
+}
+
+.team {
+    fill: seashell;
 }
