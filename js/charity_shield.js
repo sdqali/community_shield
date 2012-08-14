@@ -12,7 +12,7 @@ function drawVis () {
 
   d3.csv ("charity_shield.csv", function (data) {
     data = data.filter (function (d) {
-      return d.LeaguePosition != -1;
+      return +d.LeaguePosition != -1;
     });
 
     var xScale = d3.time.scale()
@@ -60,5 +60,14 @@ function drawVis () {
       .text (function (d, i) {
         return d.Year + " : " + d.Winner + ", " + d.LeaguePosition;
       });
+
+    svg.append("path")
+      .attr("class", "line")
+      .attr("fill", "none")
+      .attr("stroke", "steelblue")
+      .attr("stroke-width", 2)
+      .attr("d", d3.svg.line()
+            .x(function(d) { return xScale(+d.Year); })
+            .y(function(d) { return yScale(+d.LeaguePosition); }));
   });
 };
