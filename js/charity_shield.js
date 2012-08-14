@@ -4,7 +4,7 @@ function drawVis () {
       return +d.LeaguePosition != -1;
     });
 
-    var width = 1000;
+    var width = 1200;
     var height = 600;
     var margin = {top: 40, right: 40, bottom: 40, left: 40};
 
@@ -29,7 +29,7 @@ function drawVis () {
 
     vis.append("svg:path").attr("d", line(data));
 
-    vis.selectAll ("circle")
+    var circles = vis.selectAll ("circle")
       .data (data)
       .enter ()
       .append ("circle")
@@ -41,7 +41,19 @@ function drawVis () {
       })
       .attr ("r", 4)
       .attr ("fill", "teal")
-      .append ("title")
+      .attr("opacity", 0.6)
+      .on("mouseover", function(d){
+        d3.select(this)
+          .attr("r", 6)
+          .attr("opacity", "1");
+      })
+      .on("mouseout", function(d){
+        d3.select(this)
+          .attr("r", 4)
+          .attr("opacity", 0.6);
+      });
+
+    circles.append ("title")
       .text (function (d, i) {
         return d.Year + " : " + d.Winner + ", " + d.LeaguePosition;
       });
