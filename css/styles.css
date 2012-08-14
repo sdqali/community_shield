@@ -23,7 +23,11 @@ path {
 }
 
 #legend {
-    margin: 40;
+    margin: 40px;
     text-align: center;
     font-size: 1.5em;
+}
+
+#credits {
+    margin-bottom: 40px;
 }
