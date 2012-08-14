@@ -1,27 +1,3 @@
-path.allArea {
-    fill: steelblue;
-}
-
-path.homeArea {
-    fill: powderblue;
-}
-
-path.awayArea {
-    fill: lightskyblue;
-}
-
-path.scoredArea {
-    fill: springgreen;
-}
-
-path.savedArea {
-    fill: salmon;
-}
-
-path.missedArea {
-    fill: tomato;
-}
-
 .axis text {
     font: 10px sans-serif;
 }
