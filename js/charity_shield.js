@@ -83,10 +83,14 @@ function drawVis () {
   });
 }
 
-function drawLegend () {
-
+function drawLegend (d) {
+  d3.select ("#legend .details")
+    .append ("text")
+    .text (d.Year + " : " + d.Winner + ", " + d.LeaguePosition);
 }
 
 function clearLegend () {
-
+    d3.select ("#legend .details")
+    .select ("text")
+    .remove ();
 }
